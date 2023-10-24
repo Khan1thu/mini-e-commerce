@@ -14,25 +14,25 @@
         </div>
       </form>
     </div>
-    <div class="d-flex justify-content-around" style="width:100%;">
+    <div class="d-flex flex-wrap justify-content-around" style="">
     @foreach ($products as $product)
         <div class="card " style="width: 18rem;">
             <img class="card-img-top" style="height: 300px;" src="{{$product->logo ? asset('storage/'. $product->logo) : asset('/images/no-image.png')}}" alt="Card image cap">
             <div class="card-body">
-              <div class="d-flex justify-content-between" style="width:100%;">
+              <div class="d-flex justify-content-between" style="">
                 <h5 class="card-title">{{$product->name}}</h5>
                 <h5 class="card-text">{{$product->brand}}</h5>
               </div>
               <p class="card-text">
                 {{$product->description}}
               </p>
-              <div class="d-flex justify-content-between" style="width:100%;">
+              <div class="d-flex justify-content-between" style="">
                 <p class="card-text">{{$product->category}}</p>
                 <p class="card-text">{{$product->price}}</p>
               </div>
               @foreach ($users as $user)
                   @if ($user->id == $product->user_id)
-                    <div class="d-flex justify-content-between" style="width:100%;">
+                    <div class="d-flex justify-content-between" style="">
                       <small>This product was created by {{$user->name}}</small>
                     </div>
                   @endif
