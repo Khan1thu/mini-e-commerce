@@ -3,7 +3,8 @@
 @section('content')
     <h1 style="text-align: center">These are your product</h1>
 
-    @foreach ($products as $product)
+    <div class="d-flex flex-wrap justify-content-around ">
+      @foreach ($products as $product)
         @if ($product->user_id == Auth::user()->id)
         <div class="card " style="width: 18rem;">
             <img class="card-img-top" style="height: 300px;" src="{{$product->logo ? asset('storage/'. $product->logo) : asset('/images/no-image.png')}}" alt="Card image cap">
@@ -34,4 +35,6 @@
           </div>
         @endif        
     @endforeach
+    </div>
+    
 @endsection
